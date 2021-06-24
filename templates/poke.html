@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!--<link rel="stylesheet" href="main.css">!-->
+</head>
+<body>
+    <div class="battlefield">
+        <div class = "player player1">
+        {%for pokemon in player1%}
+        <div class = "card">
+            
+            <img src="{{pokemon["images"]["small"]}}">
+            <p>Damage:0<br>Status effects:None</p>   
+        </div>
+        {%endfor%}
+        </div>
+        <div class = "center">
+            <h1>Player 1 has used move _____. Player 2 please add the appropriate damage counters and status effects</h1>
+        </div>
+        <div class = "player player2">
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            <div class = "card">
+                <img src="https://images.pokemontcg.io/xy5/1.png">
+                <p>Damage:0<br>Status effects:None</p>   
+            </div>
+            </div>
+    </div>
+</body>
+</html>

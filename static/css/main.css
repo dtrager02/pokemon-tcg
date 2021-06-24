@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
+
+.player img{
+    display:inline-block
+}
+
+.player{
+    background-color: #aaa;
+}
+
+.card{
+    position:relative;
+    display: inline-block;
+}
+.card p {
+    position: absolute;
+    width: 50%;
+    background-color: aquamarine;
+    color: black;
+    bottom: 0px;
+    right: 10px;
+}
+
+.center{
+    height: 300px;
+    text-align: center;
+}
+
+.center h{
+    width: 80%;
+    text-align: center;
+}
