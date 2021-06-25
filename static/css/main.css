@@ -48,17 +48,29 @@ td {
     position:relative;
     display: inline-block;
 }
-.card p {
-    position: absolute;
-    width: 50%;
-    background-color: aquamarine;
-    color: black;
-    bottom: 0px;
-    right: 10px;
-}
 
+.card .dmg{
+    position: absolute;
+    bottom: 20px;
+    right:5px;
+    background-image: url(dmg.png);
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.dmg p{
+    margin: 0px, 0px, 0px, 0px !important;
+    height: 30px;
+    padding-top: 5px;
+}
+.active{
+    text-align: center;
+    background-color: lightcoral;
+}
 .center{
-    height: 300px;
+    height: 100px;
     text-align: center;
 }
 
@@ -66,3 +78,4 @@ td {
     width: 80%;
     text-align: center;
 }
+

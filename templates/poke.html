@@ -5,49 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <!--<link rel="stylesheet" href="main.css">!-->
 </head>
 <body>
     <div class="battlefield">
-        <div class = "player player1">
-        {%for pokemon in player1%}
-        <div class = "card">
-            
-            <img src="{{pokemon["images"]["small"]}}">
-            <p>Damage:0<br>Status effects:None</p>   
+        <div>
+            <button>
+                <form method = "POST" action="/decision">
+                <input type="submit" name="submit_button" value="Switch">
+                <input type="submit" name="submit_button" value="Attack">
+            </form>
+            </button>
+
         </div>
+        <div class = "player player1">
+        {%for i in range(4):%}
+        {%if player1[i] and i!= player1ActiveIndex:%}
+        <div class = "card">
+            <a href="/pickActive/{{i}}">
+            <img src="{{player1[i]["images"]["small"]}}">
+            <div class = "dmg">
+                <p>{{player1[i]["hp"]}}</p>
+            </div> 
+        </a>
+        </div>
+        {%endif%}
         {%endfor%}
         </div>
+        <div class="card active">
+            {%if player1ActiveIndex != -1:%}
+            {%set j = player1[player1ActiveIndex]["images"]["small"]%}
+            <img src="{{j}}">
+            <div class = "dmg">
+                <p>{{player1[player1ActiveIndex]["hp"]}}</p>
+            </div>
+            {%endif%}   
+        </div>
         <div class = "center">
-            <h1>Player 1 has used move _____. Player 2 please add the appropriate damage counters and status effects</h1>
+            <h1>{{message}} {{player1ActiveIndex}}</h1>
+            {%if status == "attacking":%}
+            <form method = "POST" action="/enterDamage">
+                <input type="text" name="submit_button" placeholder="10">
+                <input type="submit" name="btn">
+            </form>
+            {%endif%}
+      <!--  </div>
+        <div class="active">
+            {%if player2ActiveIndex != -1:%}
+            {%set k = player2[player2ActiveIndex]["images"]["small"]%}
+            <img src="{{k}}">
+            <p>Player 2 Active <br>Damage:0<br>Status effects:None</p>
+            {%endif%}   
+        </div>!-->
+        </div>
+        <div class="active card">
+            {%if player2ActiveIndex != -1:%}
+            {%set k = player2[player2ActiveIndex]["images"]["small"]%}
+            <img src="{{k}}">
+            <div class = "dmg">
+                <p>{{player2[player2ActiveIndex]["hp"]}}</p>
+            </div>
+            {%endif%}   
         </div>
         <div class = "player player2">
+            {%for i in range(4):%}
+            {%if player2[i] and i!= player2ActiveIndex:%}
             <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
+                <a href="/pickActive/{{i}}">
+                <img src="{{player2[i]["images"]["small"]}}">
+                
+                <div class = "dmg">
+                    <p>{{player2[i]["hp"]}}</p>
+                </div>
+                </p>   
+            </a>
             </div>
-            <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
+            {%endif%}
+            {%endfor%}
             </div>
-            <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
-            </div>
-            <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
-            </div>
-            <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
-            </div>
-            <div class = "card">
-                <img src="https://images.pokemontcg.io/xy5/1.png">
-                <p>Damage:0<br>Status effects:None</p>   
-            </div>
-            </div>
+            
     </div>
 </body>
 </html>
