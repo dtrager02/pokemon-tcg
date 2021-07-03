@@ -1,5 +1,5 @@
 # FlaskIntroduction
-
+This is a Flask exercise i did for a weeklong summer camp. Using flask to render the multitude of game scenarios with jinja+html became very unscalable, but it was a good exercise.
 This repo has been updated to work with `Python v3.8` and up.
 
 ### How To Run
